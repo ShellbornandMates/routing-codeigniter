@@ -5,7 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class First extends Application
 {
     public function index() {
-        // this is the view we want shown
 	$record = $this->quotes->get('6');
         echo $record['what'];
     }
@@ -13,4 +12,9 @@ class First extends Application
        $record = $this->quotes->get('6');
         echo $record['what'];
     }
+    public function gimme($id){
+        $record = $this->quotes->get($id);
+        echo $record['what'];
+    }
+    
 }

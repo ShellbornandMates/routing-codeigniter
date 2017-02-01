@@ -30,4 +30,10 @@ class Welcome extends Application
 		$this->render();
 	}
 
+    public function shucks()
+    {
+        $record = $this->quotes->get('2');
+        echo $record['what'];
+    }
+
 }
