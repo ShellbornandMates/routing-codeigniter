@@ -57,4 +57,6 @@ $route['show/(:num)'] = "first/gimme/3";
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
 $route['sleep'] = "first/zzz";
 $route['^[a-zA-Z]{4}/bingo'] = "bingo";
+
 $route['^(comp)[0-9]{4}/wisdom'] = "wise/bingo";
+
