@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends Application
+class Hogwarts extends Application
 {
 
 	function __construct()
@@ -28,6 +28,28 @@ class Welcome extends Application
 		$this->data['authors'] = $authors;
 
 		$this->render();
+	}
+
+    public function shucks()
+    {
+        $record = $this->quotes->get('2');
+        echo $record['what'];
+    }
+
+    public function random(){
+		// this is the view we want shown
+		$this->data['pagebody'] = 'homepage';
+
+		// build the list of authors, to pass on to our view
+		$source = $this->quotes->all();
+		$authors = array();
+
+		//get random record
+		$num = rand(0, sizeof($source) - 1);
+		
+		$record = $this->quotes->get($num);
+        echo $record['what'];
+
 	}
 
 }
