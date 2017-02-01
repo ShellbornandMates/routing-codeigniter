@@ -36,4 +36,20 @@ class Hogwarts extends Application
         echo $record['what'];
     }
 
+    public function random(){
+		// this is the view we want shown
+		$this->data['pagebody'] = 'homepage';
+
+		// build the list of authors, to pass on to our view
+		$source = $this->quotes->all();
+		$authors = array();
+
+		//get random record
+		$num = rand(0, sizeof($source) - 1);
+		
+		$record = $this->quotes->get($num);
+        echo $record['what'];
+
+	}
+
 }
